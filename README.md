@@ -1,7 +1,7 @@
-##TUGAS 2 OPREC ADMIN RPL
+## TUGAS 2 OPREC ADMIN RPL
 
-#Nama : Yanuar Eka Pramudya
-#NRP : 5025221049
+# Nama : Yanuar Eka Pramudya
+# NRP : 5025221049
 
 Login Page :
 ![image](https://github.com/pramudyanuar/TaskApp2.0/assets/131145420/f7478ee3-c691-4449-9d91-fdf11247aeac)
