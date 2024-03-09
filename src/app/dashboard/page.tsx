@@ -36,7 +36,7 @@ const Page = () => {
     };
 
     const logOutHandler = () => {
-        sessionStorage.removeItem('accessToken');
+        sessionStorage.setItem('accessToken', '');
         push('/');
     };
 

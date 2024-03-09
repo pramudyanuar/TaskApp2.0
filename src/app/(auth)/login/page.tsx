@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { UserData } from '@/types'
 
 const LoginPage = () => {
   const { push } = useRouter()
@@ -27,8 +26,9 @@ const LoginPage = () => {
       const data = await response.json()
 
       if (data.resultCode === '00047') {
-        sessionStorage.setItem('accessToken', data.accessToken);
-        
+        if(typeof window !== 'undefined') {
+          sessionStorage.setItem('accessToken', data.accessToken);
+        }
         push('/dashboard')
       } else {
         // If not successful, show an error
@@ -39,12 +39,13 @@ const LoginPage = () => {
       alert("Error Occurred. Please try again.")
     }
   }
+  
+  useEffect(() => {
+    if (sessionStorage.getItem('accessToken') !== null && sessionStorage.getItem('accessToken') !== undefined && sessionStorage.getItem('accessToken') !== ''){
+      push('/dashboard')
+    }
+  }, [push])
 
-  if (sessionStorage.getItem('accessToken') !== null && sessionStorage.getItem('accessToken') !== undefined && sessionStorage.getItem('accessToken') !== ''){
-    push('/dashboard')
-    return <></>;
-    
-  } else {
     return (
       <div className='flex items-center justify-center h-screen'>
         <div
@@ -92,7 +93,7 @@ const LoginPage = () => {
         </div>
       </div>
     )
-  }
+    
 }
 
 export default LoginPage
