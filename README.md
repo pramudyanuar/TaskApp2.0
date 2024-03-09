@@ -1,36 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+##TUGAS 2 OPREC ADMIN RPL
 
-## Getting Started
+#Nama : Yanuar Eka Pramudya
+#NRP : 5025221049
 
-First, run the development server:
+Login Page :
+![image](https://github.com/pramudyanuar/TaskApp2.0/assets/131145420/f7478ee3-c691-4449-9d91-fdf11247aeac)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Register Page :
+![image](https://github.com/pramudyanuar/TaskApp2.0/assets/131145420/7064a7a1-4b6a-4e78-b4c1-ee25e9f8ae1e)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Task Management Page :
+![image](https://github.com/pramudyanuar/TaskApp2.0/assets/131145420/901a834b-0102-45b0-b1a4-b6d5dc62e4aa)
