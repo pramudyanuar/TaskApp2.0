@@ -27,7 +27,8 @@ const LoginPage = () => {
       const data = await response.json()
 
       if (data.resultCode === '00047') {
-        localStorage.setItem('accessToken', data.accessToken);
+        sessionStorage.setItem('accessToken', data.accessToken);
+        
         push('/dashboard')
       } else {
         // If not successful, show an error
@@ -39,7 +40,7 @@ const LoginPage = () => {
     }
   }
 
-  if (localStorage.getItem('accessToken') !== null && localStorage.getItem('accessToken') !== undefined && localStorage.getItem('accessToken') !== ''){
+  if (sessionStorage.getItem('accessToken') !== null && sessionStorage.getItem('accessToken') !== undefined && sessionStorage.getItem('accessToken') !== ''){
     push('/dashboard')
     return <></>;
     

@@ -27,7 +27,7 @@ const Page = () => {
     const [username, setUsername] = useState('');
     const [profile, setProfile] = useState('');
 
-    if (localStorage.getItem('accessToken') === null || localStorage.getItem('accessToken') === undefined || localStorage.getItem('accessToken') === ''){
+    if (sessionStorage.getItem('accessToken') === null || sessionStorage.getItem('accessToken') === undefined || sessionStorage.getItem('accessToken') === ''){
         push('/');
     }
 
@@ -36,7 +36,7 @@ const Page = () => {
     };
 
     const logOutHandler = () => {
-        localStorage.removeItem('accessToken');
+        sessionStorage.removeItem('accessToken');
         push('/');
     };
 
@@ -99,7 +99,7 @@ const Page = () => {
             const response = await fetch('https://oprec-api.labse.in/api/task', {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                    'Authorization': `Bearer ${sessionStorage.getItem('accessToken')}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(newTaskData)
@@ -121,7 +121,7 @@ const Page = () => {
         const response = await fetch(`https://oprec-api.labse.in/api/task/${taskId}`, {
             method: 'PUT',
             headers: {
-                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                'Authorization': `Bearer ${sessionStorage.getItem('accessToken')}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
@@ -144,7 +144,7 @@ const Page = () => {
         const response = await fetch(`https://oprec-api.labse.in/api/task/${taskId}`, {
             method: 'PUT',
             headers: {
-                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                'Authorization': `Bearer ${sessionStorage.getItem('accessToken')}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
@@ -167,7 +167,7 @@ const Page = () => {
         const response = await fetch(`https://oprec-api.labse.in/api/task/${taskId}`, {
             method: 'PUT',
             headers: {
-                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                'Authorization': `Bearer ${sessionStorage.getItem('accessToken')}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
@@ -190,7 +190,7 @@ const Page = () => {
         const response = await fetch(`https://oprec-api.labse.in/api/task/${taskId}`, {
             method: 'DELETE',
             headers: {
-                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                'Authorization': `Bearer ${sessionStorage.getItem('accessToken')}`,
             },
         });
         if (response.ok) {
@@ -209,7 +209,7 @@ const Page = () => {
         const response = await fetch(`https://oprec-api.labse.in/api/task/${taskId}`, {
             method: 'PUT',
             headers: {
-                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                'Authorization': `Bearer ${sessionStorage.getItem('accessToken')}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
@@ -232,7 +232,7 @@ const Page = () => {
             const response = await fetch('https://oprec-api.labse.in/api/user', {
                 method: 'GET',
                 headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                    'Authorization': `Bearer ${sessionStorage.getItem('accessToken')}`
                 }
             });
             if (response.ok) {
