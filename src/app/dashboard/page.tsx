@@ -4,12 +4,26 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import Image from 'next/image';
 
 
 const Page = () => {
+
+    interface Task {
+        _id: string;
+        title: string;
+        description: string;
+        dueDate: string;
+        tags: string[];
+        checklists: { checklistItem: string; isDone: boolean }[];
+        attachments: { link: string; displayText: string }[];
+        status: string;
+    }
+    
+
     const { push } = useRouter();
     const [showSidebar, setShowSidebar] = useState(false);
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState<Task[]>([]);
     const [username, setUsername] = useState('');
     const [profile, setProfile] = useState('');
 
@@ -253,7 +267,7 @@ const Page = () => {
             {/* Sidebar */}
             <div className={`sm:block ${showSidebar ? 'block' : 'hidden'} w-64 bg-gray-800 text-white flex flex-col justify-between md:flex md:flex-col`}>
                 <div className="p-4 mt-12 flex items-center justify-center flex-col">
-                    <img src={profile} alt="" className="mt-5 h-16 w-16" />
+                    <Image src={profile} width={16} height={16} alt="" className="mt-5 h-16 w-16" />
                     <h1 className="text-base font-bold mt-3">{username}</h1>
                 </div>
                 <div className="flex items-center justify-center md:mt-80 lg:mt-96">
