@@ -27,9 +27,15 @@ const Page = () => {
     const [username, setUsername] = useState('');
     const [profile, setProfile] = useState('');
 
-    if (sessionStorage.getItem('accessToken') === null || sessionStorage.getItem('accessToken') === undefined || sessionStorage.getItem('accessToken') === ''){
-        push('/');
-    }
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            if (sessionStorage.getItem('accessToken') === null || 
+                sessionStorage.getItem('accessToken') === undefined || 
+                sessionStorage.getItem('accessToken') === '') {
+                push('/');
+            }
+        }
+    }, [push]);
 
     const toggleSidebar = () => {
         setShowSidebar(!showSidebar);
